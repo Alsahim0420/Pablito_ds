@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pablito_ds/pablito_ds.dart';
+import '../widgets/theme_toggle.dart';
 import 'templates/base_layout_demo.dart';
 import 'templates/dashboard_layout_demo.dart';
 import 'templates/auth_layout_demo.dart';
@@ -10,7 +11,10 @@ class TemplatesShowcase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Plantillas')),
+      appBar: AppBar(
+        title: const Text('Plantillas'),
+        actions: const [ThemeToggle()],
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(DesignTokens.spacingMD),
         child: Column(

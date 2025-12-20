@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pablito_ds/pablito_ds.dart';
+import '../widgets/theme_toggle.dart';
 
 class MoleculesShowcase extends StatelessWidget {
   const MoleculesShowcase({super.key});
@@ -9,6 +10,7 @@ class MoleculesShowcase extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Moléculas'),
+        actions: const [ThemeToggle()],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(DesignTokens.spacingMD),

@@ -38,16 +38,21 @@ class TextInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (label != null) ...[
           Text(
             label!,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: DesignTokens.fontSizeSM,
               fontWeight: DesignTokens.fontWeightMedium,
-              color: DesignTokens.onSurface,
+              color: isDark
+                  ? DesignTokens.darkOnSurface
+                  : DesignTokens.onSurface,
             ),
           ),
           const SizedBox(height: DesignTokens.spacingXS),
@@ -61,9 +66,7 @@ class TextInput extends StatelessWidget {
           maxLength: maxLength,
           onChanged: onChanged,
           validator: validator,
-          style: const TextStyle(
-            fontSize: DesignTokens.fontSizeMD,
-          ),
+          style: const TextStyle(fontSize: DesignTokens.fontSizeMD),
           decoration: InputDecoration(
             hintText: hint,
             errorText: errorText,
@@ -73,20 +76,30 @@ class TextInput extends StatelessWidget {
               vertical: DesignTokens.spacingMD,
             ),
             prefixIcon: prefixIcon != null
-                ? Icon(prefixIcon, size: 20, color: DesignTokens.onSurface)
+                ? Icon(
+                    prefixIcon,
+                    size: 20,
+                    color: isDark
+                        ? DesignTokens.darkOnSurface
+                        : DesignTokens.onSurface,
+                  )
                 : null,
             suffixIcon: suffixIcon != null
                 ? Material(
                     color: Colors.transparent,
                     child: InkWell(
                       onTap: onSuffixIconTap,
-                      borderRadius: BorderRadius.circular(DesignTokens.radiusMD),
+                      borderRadius: BorderRadius.circular(
+                        DesignTokens.radiusMD,
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.all(DesignTokens.spacingSM),
                         child: Icon(
                           suffixIcon,
                           size: 20,
-                          color: DesignTokens.onSurface,
+                          color: isDark
+                              ? DesignTokens.darkOnSurface
+                              : DesignTokens.onSurface,
                         ),
                       ),
                     ),
@@ -98,4 +111,3 @@ class TextInput extends StatelessWidget {
     );
   }
 }
-

@@ -22,21 +22,34 @@ class BodyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     double fontSize;
     FontWeight fontWeight;
+    Color defaultColor;
 
     switch (size) {
       case BodyTextSize.small:
         fontSize = DesignTokens.fontSizeSM;
         fontWeight = DesignTokens.fontWeightRegular;
+        defaultColor = isDark
+            ? DesignTokens.darkOnSurfaceSecondary
+            : DesignTokens.onSurface;
         break;
       case BodyTextSize.medium:
         fontSize = DesignTokens.fontSizeMD;
         fontWeight = DesignTokens.fontWeightRegular;
+        defaultColor = isDark
+            ? DesignTokens.darkOnSurface
+            : DesignTokens.onSurface;
         break;
       case BodyTextSize.large:
         fontSize = DesignTokens.fontSizeLG;
         fontWeight = DesignTokens.fontWeightRegular;
+        defaultColor = isDark
+            ? DesignTokens.darkOnSurface
+            : DesignTokens.onSurface;
         break;
     }
 
@@ -48,11 +61,10 @@ class BodyText extends StatelessWidget {
       style: TextStyle(
         fontSize: fontSize,
         fontWeight: fontWeight,
-        color: color ?? DesignTokens.onSurface,
+        color: color ?? defaultColor,
       ),
     );
   }
 }
 
 enum BodyTextSize { small, medium, large }
-
