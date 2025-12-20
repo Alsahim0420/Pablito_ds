@@ -18,12 +18,15 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Container(
       decoration: BoxDecoration(
-        color: DesignTokens.background,
+        color: isDark ? DesignTokens.darkSurface : DesignTokens.background,
         border: Border(
           top: BorderSide(
-            color: DesignTokens.border,
+            color: isDark ? DesignTokens.darkBorder : DesignTokens.border,
             width: 1,
           ),
         ),
@@ -53,7 +56,10 @@ class NavBar extends StatelessWidget {
                           icon: item.icon,
                           color: isSelected
                               ? DesignTokens.primary
-                              : DesignTokens.onSurface.withOpacity(0.6),
+                              : (isDark
+                                        ? DesignTokens.darkOnSurfaceSecondary
+                                        : DesignTokens.onSurface)
+                                    .withOpacity(0.6),
                           predefinedSize: IconSize.medium,
                         ),
                         const SizedBox(height: DesignTokens.spacingXS),
@@ -62,7 +68,10 @@ class NavBar extends StatelessWidget {
                           size: BodyTextSize.small,
                           color: isSelected
                               ? DesignTokens.primary
-                              : DesignTokens.onSurface.withOpacity(0.6),
+                              : (isDark
+                                        ? DesignTokens.darkOnSurfaceSecondary
+                                        : DesignTokens.onSurface)
+                                    .withOpacity(0.6),
                         ),
                       ],
                     ),
@@ -81,9 +90,5 @@ class NavBarItem {
   final IconData icon;
   final String label;
 
-  NavBarItem({
-    required this.icon,
-    required this.label,
-  });
+  NavBarItem({required this.icon, required this.label});
 }
-

@@ -7,17 +7,17 @@ class AuthLayout extends StatelessWidget {
   final String? title;
   final String? subtitle;
 
-  const AuthLayout({
-    super.key,
-    required this.child,
-    this.title,
-    this.subtitle,
-  });
+  const AuthLayout({super.key, required this.child, this.title, this.subtitle});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: DesignTokens.surface,
+      backgroundColor: isDark
+          ? DesignTokens.darkBackground
+          : DesignTokens.surface,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -38,7 +38,9 @@ class AuthLayout extends StatelessWidget {
                       style: TextStyle(
                         fontSize: DesignTokens.fontSizeXXXL,
                         fontWeight: DesignTokens.fontWeightBold,
-                        color: DesignTokens.onBackground,
+                        color: isDark
+                            ? DesignTokens.darkOnBackground
+                            : DesignTokens.onBackground,
                       ),
                     ),
                     const SizedBox(height: DesignTokens.spacingMD),
@@ -50,7 +52,9 @@ class AuthLayout extends StatelessWidget {
                       style: TextStyle(
                         fontSize: DesignTokens.fontSizeMD,
                         fontWeight: DesignTokens.fontWeightRegular,
-                        color: DesignTokens.onSurface,
+                        color: isDark
+                            ? DesignTokens.darkOnSurface
+                            : DesignTokens.onSurface,
                       ),
                     ),
                     const SizedBox(height: DesignTokens.spacingXL),
@@ -65,4 +69,3 @@ class AuthLayout extends StatelessWidget {
     );
   }
 }
-

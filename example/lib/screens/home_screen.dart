@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pablito_ds/pablito_ds.dart';
+import '../widgets/theme_toggle.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,6 +8,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Pablito DS'),
+        actions: const [ThemeToggle()],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(DesignTokens.spacingXL),

@@ -19,25 +19,34 @@ class FormFieldGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         BodyText(
           text: label,
           size: BodyTextSize.medium,
-          color: DesignTokens.onSurface,
+          color: isDark ? DesignTokens.darkOnSurface : DesignTokens.onSurface,
         ),
         const SizedBox(height: DesignTokens.spacingSM),
-        ...fields.map((field) => Padding(
-              padding: const EdgeInsets.only(bottom: DesignTokens.spacingMD),
-              child: field,
-            )),
+        ...fields.map(
+          (field) => Padding(
+            padding: const EdgeInsets.only(bottom: DesignTokens.spacingMD),
+            child: field,
+          ),
+        ),
         if (helperText != null && errorText == null) ...[
           const SizedBox(height: DesignTokens.spacingXS),
           BodyText(
             text: helperText!,
             size: BodyTextSize.small,
-            color: DesignTokens.onSurface.withOpacity(0.6),
+            color:
+                (isDark
+                        ? DesignTokens.darkOnSurfaceSecondary
+                        : DesignTokens.onSurface)
+                    .withOpacity(0.6),
           ),
         ],
         if (errorText != null) ...[
@@ -52,4 +61,3 @@ class FormFieldGroup extends StatelessWidget {
     );
   }
 }
-
