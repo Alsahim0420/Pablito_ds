@@ -1,0 +1,12 @@
+# Configuración de lcov para el proyecto
+
+# Excluir archivos de generación y archivos de prueba
+lcov_exclude_patterns = [
+  '*/test/*',
+  '*/tests/*',
+  '*/example/*',
+  '*/generated/*',
+  '*.g.dart',
+  '*.freezed.dart',
+  '*.mocks.dart',
+]

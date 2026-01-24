@@ -1,8 +1,14 @@
+// Este archivo mantiene tests básicos para compatibilidad
+// Los tests completos están organizados en las carpetas:
+// - test/unit/ para tests unitarios
+// - test/widgets/ para tests de widgets
+// - test/integration/ para tests de integración
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pablito_ds/pablito_ds.dart';
 
 void main() {
-  group('DesignTokens', () {
+  group('DesignTokens - Basic Tests', () {
     test('should have defined spacing values', () {
       expect(DesignTokens.spacingXS, 4.0);
       expect(DesignTokens.spacingSM, 8.0);
@@ -26,7 +32,7 @@ void main() {
     });
   });
 
-  group('DesignTheme', () {
+  group('DesignTheme - Basic Tests', () {
     test('should create light theme', () {
       final theme = DesignTheme.lightTheme;
       expect(theme, isNotNull);
@@ -34,7 +40,7 @@ void main() {
     });
   });
 
-  group('BadgeAtom', () {
+  group('BadgeAtom - Basic Tests', () {
     test('should create badge with label', () {
       const badge = BadgeAtom(label: 'Test', variant: BadgeVariant.primary);
       expect(badge.label, 'Test');
