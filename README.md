@@ -17,8 +17,9 @@ Sistema de diseño basado en Atomic Design para Flutter. Este paquete proporcion
 ## ✨ Características
 
 - **Atomic Design**: Sistema de diseño organizado en 5 niveles (átomos, moléculas, organismos, plantillas y páginas)
-- **Componentes Reutilizables**: Más de 30 componentes listos para usar
-- **Tema Consistente**: Sistema de tokens de diseño unificado
+- **Identidad única**: Todos los widgets llevan el prefijo **Pab** para identificarlos como parte de Pablito DS y evitar colisiones con widgets de Flutter u otros paquetes
+- **Componentes Reutilizables**: Más de 25 componentes listos para usar
+- **Tema Consistente**: Sistema de tokens de diseño unificado (`DesignTokens`, `DesignTheme`)
 - **Showcase Completo**: Aplicación de ejemplo que demuestra todos los componentes
 - **Fácil de Usar**: API intuitiva y bien documentada
 - **Material Design 3**: Basado en las últimas especificaciones de Material Design
@@ -78,11 +79,13 @@ class MyApp extends StatelessWidget {
 
 ### Ejemplo: Usando Componentes Atómicos
 
+Todos los componentes del sistema de diseño tienen el prefijo **Pab** para identificarlos como parte de Pablito DS y evitar colisiones con widgets de Flutter u otros paquetes:
+
 ```dart
 import 'package:pablito_ds/pablito_ds.dart';
 
 // Botón primario
-PrimaryButton(
+PabPrimaryButton(
   label: 'Guardar',
   icon: Icons.save,
   onPressed: () {
@@ -91,14 +94,14 @@ PrimaryButton(
 )
 
 // Input de texto
-TextInput(
+PabTextInput(
   label: 'Nombre',
   hint: 'Ingresa tu nombre',
   prefixIcon: Icons.person,
 )
 
 // Badge
-BadgeAtom(
+PabBadge(
   label: 'Nuevo',
   variant: BadgeVariant.success,
 )
@@ -108,17 +111,17 @@ BadgeAtom(
 
 ```dart
 // Card simple
-SimpleCard(
+PabCard(
   title: 'Título del Card',
   subtitle: 'Subtítulo',
-  content: BodyText(
+  content: PabBodyText(
     text: 'Contenido del card',
     size: BodyTextSize.medium,
   ),
 )
 
 // Barra de búsqueda
-SearchBarMolecule(
+PabSearchBar(
   hint: 'Buscar...',
   onChanged: (value) {
     // Manejar búsqueda
@@ -130,21 +133,21 @@ SearchBarMolecule(
 
 ```dart
 // Header de aplicación
-AppHeader(
+PabAppHeader(
   title: 'Mi Aplicación',
   actions: [
-    IconButton(icon: Icon(Icons.search), onPressed: () {}),
+    IconButton(icon: PabIcon(icon: Icons.search), onPressed: () {}),
   ],
 )
 
 // Formulario complejo
-ComplexForm(
+PabComplexForm(
   fields: [
-    FormFieldGroup(
+    PabFormFieldGroup(
       label: 'Información Personal',
       fields: [
-        TextInput(label: 'Nombre'),
-        TextInput(label: 'Email'),
+        PabTextInput(label: 'Nombre'),
+        PabTextInput(label: 'Email'),
       ],
     ),
   ],
@@ -157,13 +160,13 @@ ComplexForm(
 
 ```dart
 // Layout de dashboard
-DashboardLayout(
+PabDashboardLayout(
   title: 'Dashboard',
   currentNavIndex: 0,
   onNavTap: (index) {},
   navItems: [
-    NavBarItem(icon: Icons.home, label: 'Inicio'),
-    NavBarItem(icon: Icons.search, label: 'Buscar'),
+    PabNavBarItem(icon: Icons.home, label: 'Inicio'),
+    PabNavBarItem(icon: Icons.search, label: 'Buscar'),
   ],
   body: YourContent(),
 )
@@ -174,41 +177,41 @@ DashboardLayout(
 El sistema de diseño está organizado en 5 niveles siguiendo Atomic Design:
 
 ### 1. Átomos
-Componentes básicos e indivisibles:
-- Botones (PrimaryButton, SecondaryButton, TextButtonAtom)
-- Inputs (TextInput)
-- Tipografía (Heading, BodyText)
-- Iconos (IconAtom)
-- Badges
-- Divisores
+Componentes básicos e indivisibles (prefijo **Pab**):
+- Botones: `PabPrimaryButton`, `PabSecondaryButton`, `PabTextButton`
+- Inputs: `PabTextInput`
+- Tipografía: `PabHeading`, `PabBodyText`
+- Iconos: `PabIcon`
+- Badges: `PabBadge`
+- Divisores: `PabDivider`
 
 ### 2. Moléculas
 Combinaciones simples de átomos:
-- Cards (SimpleCard)
-- Formularios (FormFieldGroup)
-- Barra de búsqueda (SearchBar)
-- Items de lista (ListItem)
-- Avatares (Avatar)
-- Alertas (Alert)
+- Cards: `PabCard`
+- Formularios: `PabFormFieldGroup`
+- Barra de búsqueda: `PabSearchBar`
+- Items de lista: `PabListItem`
+- Avatares: `PabAvatar`
+- Alertas: `PabAlert`
 
 ### 3. Organismos
 Componentes complejos formados por moléculas:
-- Header de aplicación (AppHeader)
-- Footer de aplicación (AppFooter)
-- Tabla de datos (DataTableOrganism)
-- Barra de navegación (NavBar)
-- Formulario complejo (ComplexForm)
+- Header de aplicación: `PabAppHeader`
+- Footer de aplicación: `PabAppFooter`
+- Tabla de datos: `PabDataTable`
+- Barra de navegación: `PabNavBar`, `PabNavBarItem`
+- Formulario complejo: `PabComplexForm`
 
 ### 4. Plantillas
 Estructuras de layout y composición:
-- BaseLayout
-- DashboardLayout
-- AuthLayout
+- `PabBaseLayout`
+- `PabDashboardLayout`
+- `PabAuthLayout`
 
 ### 5. Páginas
 Implementaciones completas de pantallas:
-- LoginPage
-- DashboardPage
+- `PabLoginPage`
+- `PabDashboardPage`
 
 ## 🎨 Tokens de Diseño
 
@@ -263,51 +266,54 @@ La aplicación showcase incluye las siguientes pantallas:
 - **Plantillas**: Ejemplos de layouts y plantillas
 - **Páginas**: Implementaciones completas de pantallas
 
-## 📚 Documentación
+##  Documentación
 
 ### Componentes Disponibles
 
+Todos los widgets del sistema llevan el prefijo **Pab** para identificarlos como parte de Pablito DS.
+
 #### Átomos
 
-- `PrimaryButton`: Botón principal con variantes
-- `SecondaryButton`: Botón secundario con borde
-- `TextButtonAtom`: Botón de texto
-- `TextInput`: Campo de entrada de texto
-- `Heading`: Encabezados (H1-H6)
-- `BodyText`: Texto del cuerpo con diferentes tamaños
-- `Badge`: Badge con variantes de color
-- `IconAtom`: Icono con tamaños predefinidos
-- `DividerAtom`: Divisor horizontal
+- `PabPrimaryButton`: Botón principal con variantes (icono, loading, full width)
+- `PabSecondaryButton`: Botón secundario con borde
+- `PabTextButton`: Botón de texto
+- `PabTextInput`: Campo de entrada de texto
+- `PabHeading`: Encabezados (H1-H6)
+- `PabBodyText`: Texto del cuerpo con diferentes tamaños
+- `PabBadge`: Badge con variantes de color y tamaños
+- `PabIcon`: Icono con tamaños predefinidos
+- `PabDivider`: Divisor horizontal
 
 #### Moléculas
 
-- `SimpleCard`: Card simple con título, subtítulo y contenido
-- `FormFieldGroup`: Grupo de campos de formulario
-- `SearchBar`: Barra de búsqueda
-- `ListItem`: Item de lista con icono y acciones
-- `Avatar`: Avatar con imagen o iniciales
-- `Alert`: Alerta con diferentes variantes
+- `PabCard`: Card simple con título, subtítulo y contenido
+- `PabFormFieldGroup`: Grupo de campos de formulario
+- `PabSearchBar`: Barra de búsqueda
+- `PabListItem`: Item de lista con icono y acciones
+- `PabAvatar`: Avatar con imagen o iniciales
+- `PabAlert`: Alerta con diferentes variantes (success, warning, error, info)
 
 #### Organismos
 
-- `AppHeader`: Header de aplicación con título y acciones
-- `AppFooter`: Footer con copyright y enlaces
-- `DataTableOrganism`: Tabla de datos
-- `NavBar`: Barra de navegación inferior
-- `ComplexForm`: Formulario complejo con múltiples campos
+- `PabAppHeader`: Header de aplicación con título y acciones
+- `PabAppFooter`: Footer con copyright y enlaces
+- `PabDataTable`: Tabla de datos
+- `PabNavBar`: Barra de navegación inferior
+- `PabNavBarItem`: Item de la barra de navegación
+- `PabComplexForm`: Formulario complejo con múltiples campos
 
 #### Plantillas
 
-- `BaseLayout`: Plantilla base con header, body y footer
-- `DashboardLayout`: Layout para dashboards
-- `AuthLayout`: Layout para pantallas de autenticación
+- `PabBaseLayout`: Plantilla base con header, body y footer
+- `PabDashboardLayout`: Layout para dashboards con navegación inferior
+- `PabAuthLayout`: Layout para pantallas de autenticación
 
 #### Páginas
 
-- `LoginPage`: Página de login completa
-- `DashboardPage`: Página de dashboard con navegación
+- `PabLoginPage`: Página de login completa
+- `PabDashboardPage`: Página de dashboard con navegación
 
-## 🛠️ Desarrollo
+##  Desarrollo
 
 ### Estructura del Proyecto
 
@@ -328,12 +334,13 @@ pablito_ds/
 
 ### Agregar Nuevos Componentes
 
-1. Crea el componente en la carpeta correspondiente según su nivel
-2. Exporta el componente en `lib/pablito_ds.dart`
-3. Agrega ejemplos en la aplicación showcase
-4. Actualiza esta documentación
+1. Crea el componente en la carpeta correspondiente según su nivel (átomos, moléculas, organismos, etc.)
+2. **Usa el prefijo Pab** en el nombre del widget (ej: `PabNuevoComponente`)
+3. Exporta el componente en `lib/pablito_ds.dart`
+4. Agrega ejemplos en la aplicación showcase
+5. Actualiza esta documentación y los tests
 
-## 🤝 Contribuir
+##  Contribuir
 
 Las contribuciones son bienvenidas. Por favor:
 
@@ -343,14 +350,6 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📝 Licencia
+##  Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 📞 Contacto
-
-Para preguntas o sugerencias, por favor abre un issue en GitHub.
-
----
-
-**Nota**: Este es un sistema de diseño en desarrollo activo. Algunos componentes pueden estar sujetos a cambios.
