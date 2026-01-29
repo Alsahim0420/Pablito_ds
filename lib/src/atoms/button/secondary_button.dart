@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Botón secundario del sistema de diseño
-class SecondaryButton extends StatelessWidget {
+/// Botón secundario del sistema de diseño Pablito DS
+class PabSecondaryButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
   final bool isLoading;
   final IconData? icon;
   final bool isFullWidth;
 
-  const SecondaryButton({
+  const PabSecondaryButton({
     super.key,
     required this.label,
     this.onPressed,
@@ -67,4 +67,3 @@ class SecondaryButton extends StatelessWidget {
     return button;
   }
 }
-

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Badge del sistema de diseño
-class BadgeAtom extends StatelessWidget {
+/// Badge del sistema de diseño Pablito DS
+class PabBadge extends StatelessWidget {
   final String label;
   final BadgeVariant variant;
   final BadgeSize size;
 
-  const BadgeAtom({
+  const PabBadge({
     super.key,
     required this.label,
     this.variant = BadgeVariant.primary,
@@ -65,10 +65,7 @@ class BadgeAtom extends StatelessWidget {
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: padding,
-        vertical: padding / 2,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: padding, vertical: padding / 2),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(DesignTokens.radiusFull),
@@ -86,5 +83,5 @@ class BadgeAtom extends StatelessWidget {
 }
 
 enum BadgeVariant { primary, success, warning, error, info, neutral }
-enum BadgeSize { small, medium, large }
 
+enum BadgeSize { small, medium, large }

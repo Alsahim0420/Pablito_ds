@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Campo de texto del sistema de diseño
-class TextInput extends StatelessWidget {
+/// Campo de texto del sistema de diseño Pablito DS
+class PabTextInput extends StatelessWidget {
   final String? label;
   final String? hint;
   final String? errorText;
@@ -18,7 +18,7 @@ class TextInput extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final String? Function(String?)? validator;
 
-  const TextInput({
+  const PabTextInput({
     super.key,
     this.label,
     this.hint,

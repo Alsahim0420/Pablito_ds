@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Botón de texto del sistema de diseño
-class TextButtonAtom extends StatelessWidget {
+/// Botón de texto del sistema de diseño Pablito DS
+class PabTextButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
   final IconData? icon;
   final Color? textColor;
 
-  const TextButtonAtom({
+  const PabTextButton({
     super.key,
     required this.label,
     this.onPressed,
@@ -47,4 +47,3 @@ class TextButtonAtom extends StatelessWidget {
     );
   }
 }
-

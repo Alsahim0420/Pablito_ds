@@ -7,15 +7,15 @@ import '../atoms/button/secondary_button.dart';
 import '../atoms/typography/body_text.dart';
 import '../theme/design_tokens.dart';
 
-/// Página de login de ejemplo
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+/// Página de login de ejemplo del sistema de diseño Pablito DS
+class PabLoginPage extends StatefulWidget {
+  const PabLoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<PabLoginPage> createState() => _PabLoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _PabLoginPageState extends State<PabLoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return AuthLayout(
+    return PabAuthLayout(
       title: 'Bienvenido',
       subtitle: 'Inicia sesión para continuar',
       child: Form(
@@ -52,10 +52,10 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            FormFieldGroup(
+            PabFormFieldGroup(
               label: 'Correo electrónico',
               fields: [
-                TextInput(
+                PabTextInput(
                   controller: _emailController,
                   hint: 'tu@email.com',
                   keyboardType: TextInputType.emailAddress,
@@ -72,10 +72,10 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(height: DesignTokens.spacingLG),
-            FormFieldGroup(
+            PabFormFieldGroup(
               label: 'Contraseña',
               fields: [
-                TextInput(
+                PabTextInput(
                   controller: _passwordController,
                   hint: '••••••••',
                   obscureText: true,
@@ -94,21 +94,21 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: DesignTokens.spacingMD),
             Align(
               alignment: Alignment.centerRight,
-              child: BodyText(
+              child: PabBodyText(
                 text: '¿Olvidaste tu contraseña?',
                 size: BodyTextSize.small,
                 color: DesignTokens.primary,
               ),
             ),
             const SizedBox(height: DesignTokens.spacingXXL),
-            PrimaryButton(
+            PabPrimaryButton(
               label: 'Iniciar sesión',
               onPressed: _handleLogin,
               isLoading: _isLoading,
               isFullWidth: true,
             ),
             const SizedBox(height: DesignTokens.spacingMD),
-            SecondaryButton(
+            PabSecondaryButton(
               label: 'Crear cuenta',
               onPressed: () {},
               isFullWidth: true,
@@ -119,4 +119,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-

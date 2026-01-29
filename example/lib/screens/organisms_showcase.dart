@@ -16,12 +16,15 @@ class OrganismsShowcase extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const AppHeader(
+            const PabAppHeader(
               title: 'Header de Aplicación',
               actions: [
-                IconAtom(icon: Icons.search, predefinedSize: IconSize.medium),
+                PabIcon(icon: Icons.search, predefinedSize: IconSize.medium),
                 SizedBox(width: DesignTokens.spacingMD),
-                IconAtom(icon: Icons.notifications, predefinedSize: IconSize.medium),
+                PabIcon(
+                  icon: Icons.notifications,
+                  predefinedSize: IconSize.medium,
+                ),
               ],
             ),
             Padding(
@@ -29,49 +32,62 @@ class OrganismsShowcase extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Heading(text: 'Tabla de Datos', level: HeadingLevel.h2),
+                  const PabHeading(text: 'Tabla de Datos', level: HeadingLevel.h2),
                   const SizedBox(height: DesignTokens.spacingMD),
-                  DataTableOrganism(
+                  PabDataTable(
                     title: 'Usuarios',
                     columns: ['Nombre', 'Email', 'Rol', 'Estado'],
                     rows: [
                       ['Juan Pérez', 'juan@example.com', 'Admin', 'Activo'],
-                      ['María García', 'maria@example.com', 'Usuario', 'Activo'],
-                      ['Carlos López', 'carlos@example.com', 'Usuario', 'Inactivo'],
+                      [
+                        'María García',
+                        'maria@example.com',
+                        'Usuario',
+                        'Activo',
+                      ],
+                      [
+                        'Carlos López',
+                        'carlos@example.com',
+                        'Usuario',
+                        'Inactivo',
+                      ],
                     ],
                   ),
                   const SizedBox(height: DesignTokens.spacingXL),
-                  const DividerAtom(),
+                  const PabDivider(),
                   const SizedBox(height: DesignTokens.spacingXL),
-                  const Heading(text: 'Formulario Complejo', level: HeadingLevel.h2),
+                  const PabHeading(
+                    text: 'Formulario Complejo',
+                    level: HeadingLevel.h2,
+                  ),
                   const SizedBox(height: DesignTokens.spacingMD),
-                  ComplexForm(
+                  PabComplexForm(
                     fields: [
-                      FormFieldGroup(
+                      PabFormFieldGroup(
                         label: 'Información Personal',
                         fields: const [
-                          TextInput(
+                          PabTextInput(
                             label: 'Nombre',
                             hint: 'Ingresa tu nombre',
                             prefixIcon: Icons.person,
                           ),
-                          TextInput(
+                          PabTextInput(
                             label: 'Apellido',
                             hint: 'Ingresa tu apellido',
                             prefixIcon: Icons.person_outline,
                           ),
                         ],
                       ),
-                      FormFieldGroup(
+                      PabFormFieldGroup(
                         label: 'Información de Contacto',
                         fields: const [
-                          TextInput(
+                          PabTextInput(
                             label: 'Email',
                             hint: 'tu@email.com',
                             prefixIcon: Icons.email,
                             keyboardType: TextInputType.emailAddress,
                           ),
-                          TextInput(
+                          PabTextInput(
                             label: 'Teléfono',
                             hint: '+1 234 567 8900',
                             prefixIcon: Icons.phone,
@@ -86,19 +102,19 @@ class OrganismsShowcase extends StatelessWidget {
                     onSecondarySubmit: () {},
                   ),
                   const SizedBox(height: DesignTokens.spacingXL),
-                  const DividerAtom(),
+                  const PabDivider(),
                   const SizedBox(height: DesignTokens.spacingXL),
-                  const Heading(text: 'Footer', level: HeadingLevel.h2),
+                  const PabHeading(text: 'Footer', level: HeadingLevel.h2),
                   const SizedBox(height: DesignTokens.spacingMD),
                 ],
               ),
             ),
-            AppFooter(
+            PabAppFooter(
               copyright: '© 2024 Pablito DS. Todos los derechos reservados.',
               links: [
-                TextButtonAtom(label: 'Términos', onPressed: () {}),
-                TextButtonAtom(label: 'Privacidad', onPressed: () {}),
-                TextButtonAtom(label: 'Contacto', onPressed: () {}),
+                PabTextButton(label: 'Términos', onPressed: () {}),
+                PabTextButton(label: 'Privacidad', onPressed: () {}),
+                PabTextButton(label: 'Contacto', onPressed: () {}),
               ],
             ),
           ],
@@ -107,4 +123,3 @@ class OrganismsShowcase extends StatelessWidget {
     );
   }
 }
-

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Componente de encabezado del sistema de diseño
-class Heading extends StatelessWidget {
+/// Componente de encabezado del sistema de diseño Pablito DS
+class PabHeading extends StatelessWidget {
   final String text;
   final HeadingLevel level;
   final Color? color;
   final TextAlign? textAlign;
 
-  const Heading({
+  const PabHeading({
     super.key,
     required this.text,
     this.level = HeadingLevel.h1,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../theme/design_tokens.dart';
 
-/// Plantilla base del sistema de diseño
-class BaseLayout extends StatelessWidget {
+/// Plantilla base del sistema de diseño Pablito DS
+class PabBaseLayout extends StatelessWidget {
   final String? title;
   final Widget? header;
   final Widget body;
@@ -12,7 +12,7 @@ class BaseLayout extends StatelessWidget {
   final List<Widget>? appBarActions;
   final VoidCallback? onAppBarBack;
 
-  const BaseLayout({
+  const PabBaseLayout({
     super.key,
     this.title,
     this.header,
@@ -56,4 +56,3 @@ class BaseLayout extends StatelessWidget {
     );
   }
 }
-

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Avatar del sistema de diseño
-class Avatar extends StatelessWidget {
+/// Avatar del sistema de diseño Pablito DS
+class PabAvatar extends StatelessWidget {
   final String? imageUrl;
   final String? initials;
   final double size;
   final Color? backgroundColor;
   final Color? textColor;
 
-  const Avatar({
+  const PabAvatar({
     super.key,
     this.imageUrl,
     this.initials,
@@ -27,10 +27,7 @@ class Avatar extends StatelessWidget {
         shape: BoxShape.circle,
         color: backgroundColor ?? DesignTokens.primary,
         image: imageUrl != null
-            ? DecorationImage(
-                image: NetworkImage(imageUrl!),
-                fit: BoxFit.cover,
-              )
+            ? DecorationImage(image: NetworkImage(imageUrl!), fit: BoxFit.cover)
             : null,
       ),
       child: imageUrl == null && initials != null
@@ -48,4 +45,3 @@ class Avatar extends StatelessWidget {
     );
   }
 }
-

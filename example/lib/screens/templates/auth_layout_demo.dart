@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pablito_ds/pablito_ds.dart';
 
-class AuthLayoutDemo extends StatefulWidget {
-  const AuthLayoutDemo({super.key});
+class PabAuthLayoutDemo extends StatefulWidget {
+  const PabAuthLayoutDemo({super.key});
 
   @override
-  State<AuthLayoutDemo> createState() => _AuthLayoutDemoState();
+  State<PabAuthLayoutDemo> createState() => _PabAuthLayoutDemoState();
 }
 
-class _AuthLayoutDemoState extends State<AuthLayoutDemo> {
+class _PabAuthLayoutDemoState extends State<PabAuthLayoutDemo> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -46,7 +46,7 @@ class _AuthLayoutDemoState extends State<AuthLayoutDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return AuthLayout(
+    return PabAuthLayout(
       title: 'Iniciar Sesión',
       subtitle: 'Ingresa tus credenciales',
       child: Form(
@@ -54,7 +54,7 @@ class _AuthLayoutDemoState extends State<AuthLayoutDemo> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextInput(
+            PabTextInput(
               label: 'Email',
               hint: 'tu@email.com',
               controller: _emailController,
@@ -71,7 +71,7 @@ class _AuthLayoutDemoState extends State<AuthLayoutDemo> {
               },
             ),
             const SizedBox(height: DesignTokens.spacingMD),
-            TextInput(
+            PabTextInput(
               label: 'Contraseña',
               hint: '••••••••',
               controller: _passwordController,
@@ -98,20 +98,20 @@ class _AuthLayoutDemoState extends State<AuthLayoutDemo> {
             const SizedBox(height: DesignTokens.spacingMD),
             Align(
               alignment: Alignment.centerRight,
-              child: TextButtonAtom(
+              child: PabTextButton(
                 label: '¿Olvidaste tu contraseña?',
                 onPressed: () {},
               ),
             ),
             const SizedBox(height: DesignTokens.spacingLG),
-            PrimaryButton(
+            PabPrimaryButton(
               label: 'Iniciar Sesión',
               onPressed: _handleLogin,
               isLoading: _isLoading,
               isFullWidth: true,
             ),
             const SizedBox(height: DesignTokens.spacingMD),
-            SecondaryButton(
+            PabSecondaryButton(
               label: 'Crear Cuenta',
               onPressed: () {},
               isFullWidth: true,
@@ -120,11 +120,11 @@ class _AuthLayoutDemoState extends State<AuthLayoutDemo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const BodyText(
+                const PabBodyText(
                   text: '¿No tienes cuenta? ',
                   size: BodyTextSize.small,
                 ),
-                TextButtonAtom(label: 'Regístrate', onPressed: () {}),
+                PabTextButton(label: 'Regístrate', onPressed: () {}),
               ],
             ),
           ],

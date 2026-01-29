@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Icono del sistema de diseño
-class IconAtom extends StatelessWidget {
+/// Icono del sistema de diseño Pablito DS
+class PabIcon extends StatelessWidget {
   final IconData icon;
   final double? size;
   final Color? color;
   final IconSize predefinedSize;
 
-  const IconAtom({
+  const PabIcon({
     super.key,
     required this.icon,
     this.size,
