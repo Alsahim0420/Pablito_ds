@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 import '../../atoms/typography/body_text.dart';
 
-/// Grupo de campos de formulario
-class FormFieldGroup extends StatelessWidget {
+/// Grupo de campos de formulario del sistema de diseño Pablito DS
+class PabFormFieldGroup extends StatelessWidget {
   final String label;
   final List<Widget> fields;
   final String? helperText;
   final String? errorText;
 
-  const FormFieldGroup({
+  const PabFormFieldGroup({
     super.key,
     required this.label,
     required this.fields,
@@ -25,7 +25,7 @@ class FormFieldGroup extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        BodyText(
+        PabBodyText(
           text: label,
           size: BodyTextSize.medium,
           color: isDark ? DesignTokens.darkOnSurface : DesignTokens.onSurface,
@@ -39,7 +39,7 @@ class FormFieldGroup extends StatelessWidget {
         ),
         if (helperText != null && errorText == null) ...[
           const SizedBox(height: DesignTokens.spacingXS),
-          BodyText(
+          PabBodyText(
             text: helperText!,
             size: BodyTextSize.small,
             color:
@@ -51,7 +51,7 @@ class FormFieldGroup extends StatelessWidget {
         ],
         if (errorText != null) ...[
           const SizedBox(height: DesignTokens.spacingXS),
-          BodyText(
+          PabBodyText(
             text: errorText!,
             size: BodyTextSize.small,
             color: DesignTokens.error,

@@ -4,8 +4,8 @@ import '../../atoms/typography/heading.dart';
 import '../../atoms/typography/body_text.dart';
 import '../../atoms/icon/icon_atom.dart';
 
-/// Item de lista del sistema de diseño
-class ListItem extends StatelessWidget {
+/// Item de lista del sistema de diseño Pablito DS
+class PabListItem extends StatelessWidget {
   final String title;
   final String? subtitle;
   final IconData? leadingIcon;
@@ -13,7 +13,7 @@ class ListItem extends StatelessWidget {
   final VoidCallback? onTap;
   final Color? leadingIconColor;
 
-  const ListItem({
+  const PabListItem({
     super.key,
     required this.title,
     this.subtitle,
@@ -35,7 +35,7 @@ class ListItem extends StatelessWidget {
         child: Row(
           children: [
             if (leadingIcon != null) ...[
-              IconAtom(
+              PabIcon(
                 icon: leadingIcon!,
                 color: leadingIconColor ?? DesignTokens.primary,
               ),
@@ -45,16 +45,10 @@ class ListItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Heading(
-                    text: title,
-                    level: HeadingLevel.h5,
-                  ),
+                  PabHeading(text: title, level: HeadingLevel.h5),
                   if (subtitle != null) ...[
                     const SizedBox(height: DesignTokens.spacingXS),
-                    BodyText(
-                      text: subtitle!,
-                      size: BodyTextSize.small,
-                    ),
+                    PabBodyText(text: subtitle!, size: BodyTextSize.small),
                   ],
                 ],
               ),
@@ -69,4 +63,3 @@ class ListItem extends StatelessWidget {
     );
   }
 }
-

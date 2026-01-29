@@ -20,12 +20,12 @@ class TemplatesShowcase extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Heading(
+            const PabHeading(
               text: 'Plantillas del Sistema',
               level: HeadingLevel.h1,
             ),
             const SizedBox(height: DesignTokens.spacingSM),
-            const BodyText(
+            const PabBodyText(
               text:
                   'Explora cada plantilla en pantalla completa para ver cómo funcionan en una aplicación real.',
               size: BodyTextSize.medium,
@@ -36,7 +36,7 @@ class TemplatesShowcase extends StatelessWidget {
               'Base Layout',
               'Plantilla base con header, body y footer opcionales. Perfecta para páginas con estructura flexible.',
               Icons.dashboard,
-              const BaseLayoutDemo(),
+              const PabBaseLayoutDemo(),
             ),
             const SizedBox(height: DesignTokens.spacingMD),
             _buildTemplateCard(
@@ -44,7 +44,7 @@ class TemplatesShowcase extends StatelessWidget {
               'Dashboard Layout',
               'Plantilla para dashboards con navegación inferior. Incluye header y barra de navegación.',
               Icons.view_quilt,
-              const DashboardLayoutDemo(),
+              const PabDashboardLayoutDemo(),
             ),
             const SizedBox(height: DesignTokens.spacingMD),
             _buildTemplateCard(
@@ -52,7 +52,7 @@ class TemplatesShowcase extends StatelessWidget {
               'Auth Layout',
               'Plantilla para pantallas de autenticación. Diseño centrado y optimizado para formularios de login.',
               Icons.lock,
-              const AuthLayoutDemo(),
+              const PabAuthLayoutDemo(),
             ),
           ],
         ),
@@ -67,10 +67,10 @@ class TemplatesShowcase extends StatelessWidget {
     IconData icon,
     Widget demoScreen,
   ) {
-    return SimpleCard(
+    return PabCard(
       title: title,
       subtitle: description,
-      trailing: IconAtom(
+      trailing: PabIcon(
         icon: icon,
         color: DesignTokens.primary,
         predefinedSize: IconSize.large,
@@ -85,13 +85,13 @@ class TemplatesShowcase extends StatelessWidget {
         padding: const EdgeInsets.only(top: DesignTokens.spacingMD),
         child: Row(
           children: [
-            const BodyText(
+            const PabBodyText(
               text: 'Ver plantilla completa',
               size: BodyTextSize.small,
               color: DesignTokens.primary,
             ),
             const SizedBox(width: DesignTokens.spacingXS),
-            IconAtom(
+            PabIcon(
               icon: Icons.arrow_forward,
               color: DesignTokens.primary,
               predefinedSize: IconSize.small,

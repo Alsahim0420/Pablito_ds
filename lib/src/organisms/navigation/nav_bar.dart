@@ -3,13 +3,13 @@ import '../../theme/design_tokens.dart';
 import '../../atoms/icon/icon_atom.dart';
 import '../../atoms/typography/body_text.dart';
 
-/// Barra de navegación del sistema de diseño
-class NavBar extends StatelessWidget {
+/// Barra de navegación del sistema de diseño Pablito DS
+class PabNavBar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
-  final List<NavBarItem> items;
+  final List<PabNavBarItem> items;
 
-  const NavBar({
+  const PabNavBar({
     super.key,
     required this.currentIndex,
     required this.onTap,
@@ -52,7 +52,7 @@ class NavBar extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        IconAtom(
+                        PabIcon(
                           icon: item.icon,
                           color: isSelected
                               ? DesignTokens.primary
@@ -63,7 +63,7 @@ class NavBar extends StatelessWidget {
                           predefinedSize: IconSize.medium,
                         ),
                         const SizedBox(height: DesignTokens.spacingXS),
-                        BodyText(
+                        PabBodyText(
                           text: item.label,
                           size: BodyTextSize.small,
                           color: isSelected
@@ -86,9 +86,9 @@ class NavBar extends StatelessWidget {
   }
 }
 
-class NavBarItem {
+class PabNavBarItem {
   final IconData icon;
   final String label;
 
-  NavBarItem({required this.icon, required this.label});
+  PabNavBarItem({required this.icon, required this.label});
 }

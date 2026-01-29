@@ -3,14 +3,14 @@ import '../../theme/design_tokens.dart';
 import '../../atoms/typography/body_text.dart';
 import '../../atoms/icon/icon_atom.dart';
 
-/// Alerta del sistema de diseño
-class Alert extends StatelessWidget {
+/// Alerta del sistema de diseño Pablito DS
+class PabAlert extends StatelessWidget {
   final String message;
   final AlertVariant variant;
   final String? title;
   final VoidCallback? onClose;
 
-  const Alert({
+  const PabAlert({
     super.key,
     required this.message,
     this.variant = AlertVariant.info,
@@ -57,7 +57,7 @@ class Alert extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          IconAtom(
+          PabIcon(
             icon: icon,
             color: textColor,
             predefinedSize: IconSize.medium,
@@ -68,14 +68,14 @@ class Alert extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (title != null) ...[
-                  BodyText(
+                  PabBodyText(
                     text: title!,
                     size: BodyTextSize.medium,
                     color: textColor,
                   ),
                   const SizedBox(height: DesignTokens.spacingXS),
                 ],
-                BodyText(
+                PabBodyText(
                   text: message,
                   size: BodyTextSize.small,
                   color: textColor,
@@ -87,7 +87,7 @@ class Alert extends StatelessWidget {
             const SizedBox(width: DesignTokens.spacingSM),
             InkWell(
               onTap: onClose,
-              child: IconAtom(
+              child: PabIcon(
                 icon: Icons.close,
                 color: textColor,
                 predefinedSize: IconSize.small,
@@ -101,4 +101,3 @@ class Alert extends StatelessWidget {
 }
 
 enum AlertVariant { success, warning, error, info }
-

@@ -4,13 +4,13 @@ import '../../atoms/typography/heading.dart';
 import '../../atoms/typography/body_text.dart';
 import '../../atoms/divider/divider.dart';
 
-/// Tabla de datos del sistema de diseño
-class DataTableOrganism extends StatelessWidget {
+/// Tabla de datos del sistema de diseño Pablito DS
+class PabDataTable extends StatelessWidget {
   final List<String> columns;
   final List<List<String>> rows;
   final String? title;
 
-  const DataTableOrganism({
+  const PabDataTable({
     super.key,
     required this.columns,
     required this.rows,
@@ -31,35 +31,32 @@ class DataTableOrganism extends StatelessWidget {
           if (title != null) ...[
             Padding(
               padding: const EdgeInsets.all(DesignTokens.spacingLG),
-              child: Heading(
-                text: title!,
-                level: HeadingLevel.h4,
-              ),
+              child: PabHeading(text: title!, level: HeadingLevel.h4),
             ),
-            const DividerAtom(height: 0),
+            const PabDivider(height: 0),
           ],
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: DataTable(
               columns: columns
-                  .map((column) => DataColumn(
-                        label: Heading(
-                          text: column,
-                          level: HeadingLevel.h6,
-                        ),
-                      ))
+                  .map(
+                    (column) => DataColumn(
+                      label: PabHeading(text: column, level: HeadingLevel.h6),
+                    ),
+                  )
                   .toList(),
               rows: rows
-                  .map((row) => DataRow(
-                        cells: row
-                            .map((cell) => DataCell(
-                                  BodyText(
-                                    text: cell,
-                                    size: BodyTextSize.small,
-                                  ),
-                                ))
-                            .toList(),
-                      ))
+                  .map(
+                    (row) => DataRow(
+                      cells: row
+                          .map(
+                            (cell) => DataCell(
+                              PabBodyText(text: cell, size: BodyTextSize.small),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  )
                   .toList(),
             ),
           ),
@@ -68,4 +65,3 @@ class DataTableOrganism extends StatelessWidget {
     );
   }
 }
-

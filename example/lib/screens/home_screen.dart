@@ -18,13 +18,13 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Heading(
+              const PabHeading(
                 text: 'Pablito DS',
                 level: HeadingLevel.h1,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: DesignTokens.spacingSM),
-              const BodyText(
+              const PabBodyText(
                 text: 'Sistema de Diseño basado en Atomic Design',
                 size: BodyTextSize.large,
                 textAlign: TextAlign.center,
@@ -83,11 +83,11 @@ class HomeScreen extends StatelessWidget {
     IconData icon,
     String route,
   ) {
-    return SimpleCard(
+    return PabCard(
       title: title,
       subtitle: description,
       onTap: () => Navigator.pushNamed(context, route),
-      trailing: IconAtom(
+      trailing: PabIcon(
         icon: icon,
         color: DesignTokens.primary,
         predefinedSize: IconSize.large,

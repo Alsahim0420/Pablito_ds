@@ -3,8 +3,8 @@ import '../../theme/design_tokens.dart';
 import '../../atoms/typography/heading.dart';
 import '../../atoms/typography/body_text.dart';
 
-/// Card simple del sistema de diseño
-class SimpleCard extends StatelessWidget {
+/// Card simple del sistema de diseño Pablito DS
+class PabCard extends StatelessWidget {
   final String? title;
   final String? subtitle;
   final Widget? content;
@@ -12,7 +12,7 @@ class SimpleCard extends StatelessWidget {
   final VoidCallback? onTap;
   final EdgeInsets? padding;
 
-  const SimpleCard({
+  const PabCard({
     super.key,
     this.title,
     this.subtitle,
@@ -45,10 +45,7 @@ class SimpleCard extends StatelessWidget {
                   children: [
                     if (title != null)
                       Expanded(
-                        child: Heading(
-                          text: title!,
-                          level: HeadingLevel.h4,
-                        ),
+                        child: PabHeading(text: title!, level: HeadingLevel.h4),
                       ),
                     if (trailing != null) ...[
                       const SizedBox(width: DesignTokens.spacingMD),
@@ -59,10 +56,7 @@ class SimpleCard extends StatelessWidget {
               if (title != null && subtitle != null)
                 const SizedBox(height: DesignTokens.spacingXS),
               if (subtitle != null)
-                BodyText(
-                  text: subtitle!,
-                  size: BodyTextSize.small,
-                ),
+                PabBodyText(text: subtitle!, size: BodyTextSize.small),
               if (content != null) ...[
                 if (title != null || subtitle != null)
                   const SizedBox(height: DesignTokens.spacingMD),
@@ -75,4 +69,3 @@ class SimpleCard extends StatelessWidget {
     );
   }
 }
-

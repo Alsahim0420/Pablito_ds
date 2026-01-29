@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Botón primario del sistema de diseño
-class PrimaryButton extends StatelessWidget {
+/// Botón primario del sistema de diseño Pablito DS
+class PabPrimaryButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
   final bool isLoading;
   final IconData? icon;
   final bool isFullWidth;
 
-  const PrimaryButton({
+  const PabPrimaryButton({
     super.key,
     required this.label,
     this.onPressed,
@@ -42,7 +42,9 @@ class PrimaryButton extends StatelessWidget {
               width: 20,
               child: CircularProgressIndicator(
                 strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(DesignTokens.onPrimary),
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  DesignTokens.onPrimary,
+                ),
               ),
             )
           : Row(
@@ -67,4 +69,3 @@ class PrimaryButton extends StatelessWidget {
     return button;
   }
 }
-

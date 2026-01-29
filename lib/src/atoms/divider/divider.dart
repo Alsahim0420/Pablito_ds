@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Divisor del sistema de diseño
-class DividerAtom extends StatelessWidget {
+/// Divisor del sistema de diseño Pablito DS
+class PabDivider extends StatelessWidget {
   final double? height;
   final Color? color;
   final double? thickness;
   final double? indent;
   final double? endIndent;
 
-  const DividerAtom({
+  const PabDivider({
     super.key,
     this.height,
     this.color,
@@ -29,4 +29,3 @@ class DividerAtom extends StatelessWidget {
     );
   }
 }
-

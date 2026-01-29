@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:pablito_ds/pablito_ds.dart';
 import 'package:pablito_ds/pablito_ds.dart' as ds;
 
-class DashboardLayoutDemo extends StatefulWidget {
-  const DashboardLayoutDemo({super.key});
+class PabDashboardLayoutDemo extends StatefulWidget {
+  const PabDashboardLayoutDemo({super.key});
 
   @override
-  State<DashboardLayoutDemo> createState() => _DashboardLayoutDemoState();
+  State<PabDashboardLayoutDemo> createState() => _PabDashboardLayoutDemoState();
 }
 
-class _DashboardLayoutDemoState extends State<DashboardLayoutDemo> {
+class _PabDashboardLayoutDemoState extends State<PabDashboardLayoutDemo> {
   int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return DashboardLayout(
+    return PabDashboardLayout(
       title: 'Dashboard',
       currentNavIndex: _currentIndex,
       onNavTap: (index) {
@@ -23,14 +23,14 @@ class _DashboardLayoutDemoState extends State<DashboardLayoutDemo> {
         });
       },
       navItems: [
-        ds.NavBarItem(icon: Icons.home, label: 'Inicio'),
-        ds.NavBarItem(icon: Icons.search, label: 'Buscar'),
-        ds.NavBarItem(icon: Icons.favorite, label: 'Favoritos'),
-        ds.NavBarItem(icon: Icons.person, label: 'Perfil'),
+        ds.PabNavBarItem(icon: Icons.home, label: 'Inicio'),
+        ds.PabNavBarItem(icon: Icons.search, label: 'Buscar'),
+        ds.PabNavBarItem(icon: Icons.favorite, label: 'Favoritos'),
+        ds.PabNavBarItem(icon: Icons.person, label: 'Perfil'),
       ],
       headerActions: [
         IconButton(
-          icon: const IconAtom(
+          icon: const PabIcon(
             icon: Icons.notifications,
             predefinedSize: IconSize.medium,
           ),
@@ -42,12 +42,12 @@ class _DashboardLayoutDemoState extends State<DashboardLayoutDemo> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Heading(
+            PabHeading(
               text: 'Página ${_currentIndex + 1}',
               level: HeadingLevel.h2,
             ),
             const SizedBox(height: DesignTokens.spacingMD),
-            BodyText(
+            PabBodyText(
               text: _getPageDescription(_currentIndex),
               size: BodyTextSize.medium,
             ),
@@ -55,10 +55,10 @@ class _DashboardLayoutDemoState extends State<DashboardLayoutDemo> {
             Row(
               children: [
                 Expanded(
-                  child: SimpleCard(
+                  child: PabCard(
                     title: 'Card 1',
                     subtitle: 'Información importante',
-                    content: const BodyText(
+                    content: const PabBodyText(
                       text: 'Contenido del card',
                       size: BodyTextSize.small,
                     ),
@@ -66,10 +66,10 @@ class _DashboardLayoutDemoState extends State<DashboardLayoutDemo> {
                 ),
                 const SizedBox(width: DesignTokens.spacingMD),
                 Expanded(
-                  child: SimpleCard(
+                  child: PabCard(
                     title: 'Card 2',
                     subtitle: 'Más información',
-                    content: const BodyText(
+                    content: const PabBodyText(
                       text: 'Más contenido',
                       size: BodyTextSize.small,
                     ),
@@ -86,7 +86,7 @@ class _DashboardLayoutDemoState extends State<DashboardLayoutDemo> {
   String _getPageDescription(int index) {
     switch (index) {
       case 0:
-        return 'Esta es la página de inicio del dashboard. El DashboardLayout incluye un header y navegación inferior.';
+        return 'Esta es la página de inicio del dashboard. El PabDashboardLayout incluye un header y navegación inferior.';
       case 1:
         return 'Página de búsqueda. Puedes cambiar de página usando la navegación inferior.';
       case 2:

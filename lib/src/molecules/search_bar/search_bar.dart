@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../atoms/input/text_input.dart';
 
-/// Barra de búsqueda del sistema de diseño
-class SearchBarMolecule extends StatelessWidget {
+/// Barra de búsqueda del sistema de diseño Pablito DS
+class PabSearchBar extends StatelessWidget {
   final String? hint;
   final ValueChanged<String>? onChanged;
   final VoidCallback? onClear;
   final TextEditingController? controller;
 
-  const SearchBarMolecule({
+  const PabSearchBar({
     super.key,
     this.hint,
     this.onChanged,
@@ -18,7 +18,7 @@ class SearchBarMolecule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextInput(
+    return PabTextInput(
       hint: hint ?? 'Buscar...',
       controller: controller,
       onChanged: onChanged,
@@ -28,4 +28,3 @@ class SearchBarMolecule extends StatelessWidget {
     );
   }
 }
-

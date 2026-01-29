@@ -4,16 +4,16 @@ import '../organisms/header/app_header.dart';
 import '../organisms/navigation/nav_bar.dart';
 import '../organisms/navigation/nav_bar.dart' as nav;
 
-/// Plantilla de dashboard del sistema de diseño
-class DashboardLayout extends StatelessWidget {
+/// Plantilla de dashboard del sistema de diseño Pablito DS
+class PabDashboardLayout extends StatelessWidget {
   final String title;
   final Widget body;
   final int currentNavIndex;
   final ValueChanged<int> onNavTap;
-  final List<nav.NavBarItem> navItems;
+  final List<nav.PabNavBarItem> navItems;
   final List<Widget>? headerActions;
 
-  const DashboardLayout({
+  const PabDashboardLayout({
     super.key,
     required this.title,
     required this.body,
@@ -29,16 +29,11 @@ class DashboardLayout extends StatelessWidget {
       backgroundColor: DesignTokens.background,
       body: Column(
         children: [
-          AppHeader(
-            title: title,
-            actions: headerActions,
-          ),
-          Expanded(
-            child: body,
-          ),
+          PabAppHeader(title: title, actions: headerActions),
+          Expanded(child: body),
         ],
       ),
-      bottomNavigationBar: NavBar(
+      bottomNavigationBar: PabNavBar(
         currentIndex: currentNavIndex,
         onTap: onNavTap,
         items: navItems,
@@ -46,4 +41,3 @@ class DashboardLayout extends StatelessWidget {
     );
   }
 }
-

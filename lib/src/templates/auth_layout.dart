@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../theme/design_tokens.dart';
 
-/// Plantilla de autenticación del sistema de diseño
-class AuthLayout extends StatelessWidget {
+/// Plantilla de autenticación del sistema de diseño Pablito DS
+class PabAuthLayout extends StatelessWidget {
   final Widget child;
   final String? title;
   final String? subtitle;
 
-  const AuthLayout({super.key, required this.child, this.title, this.subtitle});
+  const PabAuthLayout({super.key, required this.child, this.title, this.subtitle});
 
   @override
   Widget build(BuildContext context) {

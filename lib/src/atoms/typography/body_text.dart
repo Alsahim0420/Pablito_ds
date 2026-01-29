@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../theme/design_tokens.dart';
 
-/// Componente de texto del cuerpo del sistema de diseño
-class BodyText extends StatelessWidget {
+/// Componente de texto del cuerpo del sistema de diseño Pablito DS
+class PabBodyText extends StatelessWidget {
   final String text;
   final BodyTextSize size;
   final Color? color;
@@ -10,7 +10,7 @@ class BodyText extends StatelessWidget {
   final int? maxLines;
   final TextOverflow? overflow;
 
-  const BodyText({
+  const PabBodyText({
     super.key,
     required this.text,
     this.size = BodyTextSize.medium,
