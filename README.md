@@ -2,7 +2,7 @@
 
 Sistema de diseño basado en Atomic Design para Flutter. Este paquete proporciona componentes reutilizables organizados en átomos, moléculas, organismos, plantillas y páginas, siguiendo los principios de Atomic Design.
 
-## 📋 Tabla de Contenidos
+##  Tabla de Contenidos
 
 - [Características](#características)
 - [Instalación](#instalación)
@@ -14,7 +14,7 @@ Sistema de diseño basado en Atomic Design para Flutter. Este paquete proporcion
 - [Contribuir](#contribuir)
 - [Licencia](#licencia)
 
-## ✨ Características
+##  Características
 
 - **Atomic Design**: Sistema de diseño organizado en 5 niveles (átomos, moléculas, organismos, plantillas y páginas)
 - **Identidad única**: Todos los widgets llevan el prefijo **Pab** para identificarlos como parte de Pablito DS y evitar colisiones con widgets de Flutter u otros paquetes
@@ -24,7 +24,7 @@ Sistema de diseño basado en Atomic Design para Flutter. Este paquete proporcion
 - **Fácil de Usar**: API intuitiva y bien documentada
 - **Material Design 3**: Basado en las últimas especificaciones de Material Design
 
-## 🚀 Instalación
+##  Instalación
 
 Agrega `pablito_ds` a tu archivo `pubspec.yaml`:
 
@@ -49,7 +49,7 @@ Luego ejecuta:
 flutter pub get
 ```
 
-## 📖 Uso
+##  Uso
 
 ### Configuración Básica
 
@@ -172,7 +172,7 @@ PabDashboardLayout(
 )
 ```
 
-## 🏗️ Estructura del Sistema de Diseño
+##  Estructura del Sistema de Diseño
 
 El sistema de diseño está organizado en 5 niveles siguiendo Atomic Design:
 
@@ -213,7 +213,7 @@ Implementaciones completas de pantallas:
 - `PabLoginPage`
 - `PabDashboardPage`
 
-## 🎨 Tokens de Diseño
+##  Tokens de Diseño
 
 El sistema incluye tokens de diseño centralizados en `DesignTokens`:
 
@@ -234,7 +234,7 @@ Container(
 )
 ```
 
-## 🎯 Ejemplo Showcase
+##  Ejemplo Showcase
 
 El proyecto incluye una aplicación de ejemplo completa que demuestra todos los componentes del sistema de diseño.
 
