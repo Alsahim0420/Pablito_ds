@@ -27,11 +27,14 @@ class PabDashboardLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: DesignTokens.background,
-      body: Column(
-        children: [
-          PabAppHeader(title: title, actions: headerActions),
-          Expanded(child: body),
-        ],
+      body: SafeArea(
+        top: true,
+        child: Column(
+          children: [
+            PabAppHeader(title: title, actions: headerActions),
+            Expanded(child: body),
+          ],
+        ),
       ),
       bottomNavigationBar: PabNavBar(
         currentIndex: currentNavIndex,

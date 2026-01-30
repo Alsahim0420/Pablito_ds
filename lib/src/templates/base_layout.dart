@@ -40,17 +40,20 @@ class PabBaseLayout extends StatelessWidget {
                   : null,
             )
           : null,
-      body: Column(
-        children: [
-          if (header != null) header!,
-          Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(DesignTokens.spacingMD),
-              child: body,
+      body: SafeArea(
+        top: true,
+        child: Column(
+          children: [
+            if (header != null) header!,
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(DesignTokens.spacingMD),
+                child: body,
+              ),
             ),
-          ),
-          if (footer != null) footer!,
-        ],
+            if (footer != null) footer!,
+          ],
+        ),
       ),
       bottomNavigationBar: bottomNavigation,
     );

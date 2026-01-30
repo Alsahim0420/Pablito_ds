@@ -7,7 +7,12 @@ class PabAuthLayout extends StatelessWidget {
   final String? title;
   final String? subtitle;
 
-  const PabAuthLayout({super.key, required this.child, this.title, this.subtitle});
+  const PabAuthLayout({
+    super.key,
+    required this.child,
+    this.title,
+    this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +22,9 @@ class PabAuthLayout extends StatelessWidget {
     return Scaffold(
       backgroundColor: isDark
           ? DesignTokens.darkBackground
-          : DesignTokens.surface,
+          : DesignTokens.background,
       body: SafeArea(
+        top: true,
         child: Center(
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(
