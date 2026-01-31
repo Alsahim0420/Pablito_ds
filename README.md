@@ -11,6 +11,7 @@ Sistema de diseño basado en Atomic Design para Flutter. Este paquete proporcion
 - [Componentes](#componentes)
 - [Ejemplo Showcase](#ejemplo-showcase)
 - [Documentación](#documentación)
+- [Tests](#tests)
 - [Contribuir](#contribuir)
 - [Licencia](#licencia)
 
@@ -312,6 +313,29 @@ Todos los widgets del sistema llevan el prefijo **Pab** para identificarlos como
 
 - `PabLoginPage`: Página de login completa
 - `PabDashboardPage`: Página de dashboard con navegación
+
+##  Tests
+
+El proyecto incluye pruebas unitarias y de widgets para todos los componentes del sistema de diseño.
+
+### Ejecutar los tests
+
+```bash
+flutter test
+```
+
+### Cobertura
+
+Para generar el reporte de cobertura:
+
+```bash
+flutter test --coverage
+```
+
+### Captura de los tests
+
+![Captura de los tests](https://res.cloudinary.com/panmecar/image/upload/v1769847638/test_fase4/Captura_de_pantalla_2026-01-31_a_la_s_3.20.25_a.m._tgfl1j.png)
+
 
 ##  Desarrollo
 
